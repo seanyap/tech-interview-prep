@@ -1,5 +1,9 @@
 # Algorithms(steps) to search a graph/tree 
 #
+# Always start at the simplest and scale from there
+# -> this avoids confusion and works well with recursion mindset
+# -> usually a node with two children is a good start
+#
 # Breadth first search (BFS)
 # -> start with a node, and go to all its neighbors 
 # -> when that is done, start going to its neighbors' neighbors
