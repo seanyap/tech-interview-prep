@@ -1,8 +1,17 @@
 # Algorithms(steps) to search a graph/tree 
+# -> Traversal => visit all nodes 
 #
 # Always start at the simplest and scale from there
 # -> this avoids confusion and works well with recursion mindset
 # -> usually a node with two children is a good start
+#
+# Recursive function to traverse a tree
+# -> base case 
+# -> logic to process current node
+# -> recurse left and right (order matters) with or without the processed data
+#    as input 
+# -> whether to return value during backtracking for processing logic
+# -> Backtracking => going back one level from child to parent; uses last-in-first-out concept
 #
 # Breadth first search (BFS)
 # -> start with a node, and go to all its neighbors 
