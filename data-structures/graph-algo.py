@@ -29,8 +29,13 @@ class TreeNode:
 # -> processing case(usually is a condition where we found a node or met a condition)
 # -> either way, both base & processing case terminate recursion
 
-# Iterative(using loops) BFS implementation using Queue
-def iterative_bfs(root):
+# BFS Algorithm Pseudocode
+# -> start with a node, and go to all its neighbors/children 
+# -> when that is done, start going to its neighbors' neighbors
+# -> repeat this until we have visited all nodes' neighbors
+
+# Iterative(using loops) Tree BFS Implementation using Queue
+def iterative_tree_bfs(root):
   current_level_queue = deque() 
   next_level_queue = deque() 
 
@@ -42,7 +47,7 @@ def iterative_bfs(root):
   while len(current_level_queue) > 0: 
     while len(current_level_queue) > 0:
       node = current_level_queue.popLeft() 
-      
+
       # <insert code to process node>
       
       # add neighbors/children to next_level queue
@@ -54,15 +59,15 @@ def iterative_bfs(root):
     # processing current_level, satisfying our outer while loop
     current_level_queue, next_level_queue = next_level_queue, current_level_queue
 
-# TODO
-def recursive_bfs(root):
+# TODO Iterative Graph BFS Implementation
+def iterative_graph_bfs(graph, node):
   pass
 
 
-# BFS Algorithm Pseudocode
-# -> start with a node, and go to all its neighbors/children 
-# -> when that is done, start going to its neighbors' neighbors
-# -> repeat this until we have visited all nodes' neighbors
+# TODO  
+def recursive_tree_bfs(root):
+  pass
+
 
 
 # Depth first search (DFS)
@@ -75,7 +80,7 @@ def recursive_bfs(root):
 # -> backtrack the last node and repeat the process
 
 # Pre-order DFS (process root node first, then leaf nodes)
-def preorder_dfs(root):
+def preorder_tree_dfs(root):
   # the input can also be called "node" if we're dealing with a general graph ds
   if root is None: # base case
     return
@@ -85,7 +90,7 @@ def preorder_dfs(root):
   preorder_dfs(root.right) # recurse right
 
 # Post-order DFS (process leaf nodes first, then root node)
-def postorder_dfs(root):
+def postorder_tree_dfs(root):
   if root is None:
     return 
 
@@ -94,7 +99,7 @@ def postorder_dfs(root):
   print(root.val) # process root
 
 # In-order DFS (process left leaf nodes, then root node, then right leaf nodes)
-def inorder_dfs(root):
+def inorder_tree_dfs(root):
   if root is None:
     return
 
